@@ -1,0 +1,68 @@
+// "static void main" must be defined in a public class.
+public class Main {
+    public static void main(String[] args) {
+ //     System.out.println("Hello World!");
+   
+        Scanner sc = new Scanner(System.in);
+        int n= sc.nextInt();
+        int m= sc.nextInt();
+        int[] arr1 = new int[n];
+        int i=n-1; 
+        int[] arr2 = new int[m];
+        int j=m-1;
+        int[] arr = new int[n+m];
+        int k=m+n-1;
+       for(int  q=0;q<n;q++)
+       {
+           arr1[q]=sc.nextInt();
+       }
+        
+       for(int  q=0;q<m;q++)
+       {
+           arr2[q]=sc.nextInt();
+       }
+        
+        while(i>-1 && j>-1 )
+        {
+            if(arr1[i]>arr2[j])
+            {
+                arr[k--] = arr1[i--];
+              
+                }
+            else
+            {
+                arr[k--] = arr2[j--];                    
+            }
+                
+          }
+        
+        if(i==0)
+        {
+            arr[k--] = arr1[i--];
+        }
+        else
+        {
+            arr[k--]  = arr2[j--];
+        }
+        
+        
+        for(int q=0;q<arr1.length;q++)
+        {
+            System.out.print(arr1[q]+"\t");
+           
+        }
+         System.out.println();  
+        for(int q=0;q<arr1.length;q++)
+        {
+            
+      
+            System.out.print(arr2[q]+"\t");
+        }    
+           System.out.println();
+    for(int q=0;q<arr.length;q++)
+     {
+         System.out.print(arr[q]+"\t");
+     }
+    
+    }
+}
